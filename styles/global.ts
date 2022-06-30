@@ -25,7 +25,7 @@ export default createGlobalStyle`
     }
 
     body {
-        padding-bottom: 10%;
+        padding-bottom: 15%;
         background: linear-gradient(-45deg, ${props => props.theme.primary}, ${props => props.theme.backgroundColor});
         background-size: 400% 400%;
         background-position: 0% 50%;
