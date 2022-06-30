@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import { Header, Title, Main, ContainerCount, ButtonLeftCount, Count, ButtonRightCount, Repositories, Footer } from '../styles/pages'
+import { useState } from 'react'
 import api from '../api'
 import { Irepository } from '../types'
+import Head from 'next/head'
+import { Header, Title, Main, ContainerCount, ButtonLeftCount, Count, ButtonRightCount, Repositories, Footer } from '../styles/pages'
 import Repository from '../components/Repository'
-import { useState } from 'react'
 
 export default function Home() {
     const [count, setCount] = useState(2)
     const { data: repositories } = api.get<Irepository[]>(`/users/${process.env.NEXT_PUBLIC_NAME_USER}/repos`)
-
+    
     return (
         <>
             <Head>
