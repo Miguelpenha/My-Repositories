@@ -22,7 +22,7 @@ export const Title = styled.h1`
 
 export const Main = styled.main`
     display: flex;
-    padding-top: 10%;
+    padding-top: 15%;
     flex-direction: column;
 `
 
