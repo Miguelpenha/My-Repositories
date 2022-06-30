@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Loading from '../Loading'
 
 export const Container = styled.a`
     width: 80%;
@@ -54,7 +55,7 @@ export const ContainerOpenHomePage = styled.a`
    top: 15%;
    right: 4%;
    padding: 2%;
-   width: 9.5%;
+   width: 8.5%;
    position: absolute;
    border-radius: 25%;
    transition-duration: 0.1s;
@@ -116,4 +117,10 @@ export const LanguageDetail = styled.div`
 
 export const Language = styled.div`
     font-weight: bold;
+`
+
+export const LoadingLanguage = styled(Loading)`
+    left: 0%;
+    position: sticky;
+    margin-top: 1.35%;
 `

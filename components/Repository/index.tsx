@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Irepository } from '../../types'
 import api from '../../api'
-import { Container, Header, IconNext, ContainerOpenHomePage, IconOpenHomePage, Title, Description, DescriptionIconAlert, Languages, ContainerLanguage, Language, LanguageDetail } from './style'
+import { Container, Header, IconNext, ContainerOpenHomePage, IconOpenHomePage, Title, Description, DescriptionIconAlert, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage } from './style'
 
 interface Iprops {
     repository: Irepository
@@ -38,12 +38,12 @@ const Repository: FC<Iprops> = ({ repository }) => {
                     )}
                 </Description>
                 <Languages>
-                    {languages && Object.keys(languages).map((language, index) => (
+                    {languages ? Object.keys(languages).map((language, index) => (
                         <ContainerLanguage key={index}>
                             <LanguageDetail/>
                             <Language>{language}</Language>
                         </ContainerLanguage>
-                    ))}
+                    )) : <LoadingLanguage size={20} borderSize={3}/>}
                 </Languages>
             </Header>
         </Container>
