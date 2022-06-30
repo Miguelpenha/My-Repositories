@@ -3,6 +3,7 @@ import api from '../api'
 import { Irepository } from '../types'
 import Head from 'next/head'
 import { Header, Title, Main, ContainerCount, ButtonLeftCount, Count, ButtonRightCount, Repositories, Footer } from '../styles/pages'
+import Loading from '../components/Loading'
 import Repository from '../components/Repository'
 
 export default function Home() {
@@ -41,13 +42,15 @@ export default function Home() {
                 <Title>Meus Repositórios</Title>
             </Header>
             <Main>
-                <Repositories columns={count}>
-                    {repositories && (
-                        repositories.map((repository, index) => (
-                            <Repository key={index} repository={repository}/>
-                        ))
-                    )}
-                </Repositories>
+                {repositories ? (
+                    <Repositories columns={count}>
+                        {(
+                            repositories.map((repository, index) => (
+                                <Repository key={index} repository={repository}/>
+                            ))
+                        )}
+                    </Repositories>
+                ) : <Loading/>}
             </Main>
             <Footer>
                 

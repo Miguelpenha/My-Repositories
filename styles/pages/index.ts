@@ -11,6 +11,7 @@ export const Header = styled.header`
     border-radius: 20px;
     transform: translate(-50%);
     backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
     background-color: ${props => props.theme.glassSecondary};
 `
 
@@ -34,7 +35,7 @@ export const ContainerCount = styled.div`
     margin-right: auto;
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 5px 15px rgb(0 0 0 / 20%);  
+    box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
     background-color: ${props => props.theme.glass};
 `
 
