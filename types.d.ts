@@ -10,6 +10,7 @@ export interface Itheme {
 interface Irepository {
     name: string
     language: string
+    homepage: string
     html_url: string
     description: string
     languages_url: string

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Header = styled.header`
-    top: 5%;
+    top: 3%;
     left: 50%;
     width: 90%;
     z-index: 1;

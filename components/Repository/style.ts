@@ -21,8 +21,13 @@ export const Container = styled.a`
             border-left: 4px solid ${props => props.theme.color};
 
             svg {
-                right: 2%;
+                right: 1.5%;
                 opacity: 1;
+            }
+
+            a {
+                top: 10%;
+                right: 2%;
             }
         }
     }
@@ -35,7 +40,7 @@ export const Header = styled.header`
 `
 
 export const IconNext = styled.svg`
-    top: 15%;
+    top: 60%;
     right: 5%;
     opacity: 0;
     width: 2.8vw;
@@ -45,11 +50,33 @@ export const IconNext = styled.svg`
     fill: ${props => props.theme.color};
 `
 
+export const ContainerOpenHomePage = styled.a`
+   top: 15%;
+   right: 4%;
+   padding: 2%;
+   width: 9.5%;
+   position: absolute;
+   border-radius: 25%;
+   transition-duration: 0.1s;
+   transition-timing-function: linear;
+
+   :hover {
+        border-radius: 50%;
+        backdrop-filter: blur(100px);
+        box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
+        background-color: ${props => props.theme.glass};
+   }
+`
+
+export const IconOpenHomePage = styled.svg`
+    width: 100%;
+    fill: ${props => props.theme.color};
+`
+
 export const Title = styled.h2`
     margin-left: 1%;
     margin-bottom: 1%;
     font-size: 1.2rem;
-    backface-visibility: hidden;
 `
 
 export const Description = styled.span`
