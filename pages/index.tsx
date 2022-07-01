@@ -14,6 +14,7 @@ export default function Home() {
         <>
             <Head>
                 <title>Meus repositórios</title>
+                <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Header>
                 <ContainerCount>
