@@ -13,8 +13,8 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Meus repositórios</title>
                 <link rel="icon" href="/favicon.ico"/>
+                <title>Meus repositórios</title>
             </Head>
             <Header>
                 <ContainerCount>
