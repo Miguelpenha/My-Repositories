@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <link rel="icon" href="/favicon.ico"/>
+                <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
                 <title>Meus repositórios</title>
             </Head>
             <Header>
