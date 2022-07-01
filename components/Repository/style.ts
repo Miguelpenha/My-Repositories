@@ -2,11 +2,12 @@ import styled from 'styled-components'
 import Loading from '../Loading'
 
 export const Container = styled.a`
-    width: 80%;
+    width: 85%;
     padding: 3.5%;
     margin: 3.5% auto;
     border-radius: 20px;
     text-decoration: none;
+    transform: scale(0.95);
     transition-duration: 0.15s;
     backdrop-filter: blur(100px);
     transition-timing-function: linear;
@@ -15,7 +16,7 @@ export const Container = styled.a`
     background-color: ${props => props.theme.glass};
 
     :hover {
-        transform: scale(1.05);
+        transform: scale(1);
         box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
         
         header {
@@ -77,12 +78,13 @@ export const IconOpenHomePage = styled.svg`
 export const Title = styled.h2`
     margin-left: 1%;
     margin-bottom: 1%;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 `
 
 export const Description = styled.span`
     display: flex;
     margin-left: 1%;
+    font-size: 1.2rem;
     align-items: center;
 `
 
@@ -117,6 +119,7 @@ export const LanguageDetail = styled.div`
 
 export const Language = styled.div`
     font-weight: bold;
+    font-size: 1.1rem;
 `
 
 export const LoadingLanguage = styled(Loading)`
