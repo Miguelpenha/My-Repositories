@@ -74,7 +74,7 @@ export const Title = styled.h1`
 
 export const ContainerFind = styled.div`
     top: 50%;
-    right: 1%;
+    right: 2%;
     height: 60%;
     display: flex;
     overflow: hidden;
