@@ -11,7 +11,7 @@ export const Header = styled.header`
     border-radius: 20px;
     transform: translate(-50%);
     backdrop-filter: blur(10px);
-    box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 30%);
     background-color: ${props => props.theme.glassSecondary};
 `
 
@@ -99,7 +99,7 @@ export const InputFind = styled.input`
     }
 
     ::placeholder {
-        color: ${props => props.theme.secondary};
+        color: ${props => props.theme.primary};
     }
 `
 
