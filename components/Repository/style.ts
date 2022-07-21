@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Loading from '../Loading'
+import Modal from 'react-modal'
 
 export const Container = styled.a`
     width: 85%;
@@ -22,8 +23,13 @@ export const Container = styled.a`
         header {
             border-left: 4px solid ${props => props.theme.color};
 
-            svg {
+            #icon-next {
                 right: 1.5%;
+                opacity: 1;
+            }
+
+            #icon-open-modal {
+                top: 56%;
                 opacity: 1;
             }
 
@@ -39,6 +45,25 @@ export const Header = styled.header`
     padding-left: 1%;
     transition-duration: 0.25s;
     transition-timing-function: linear;
+`
+
+export const IconOpenModal = styled.svg`
+    top: 75%;
+    right: 12%;
+    opacity: 0;
+    padding: 2%;
+    width: 3.8vw;
+    position: absolute;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+    fill: ${props => props.theme.color};
+
+    :hover {
+        border-radius: 50%;
+        backdrop-filter: blur(100px);
+        box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
+        background-color: ${props => props.theme.glass};
+   }
 `
 
 export const IconNext = styled.svg`
@@ -126,4 +151,8 @@ export const LoadingLanguage = styled(Loading)`
     left: 0%;
     position: sticky;
     margin-top: 1.35%;
+`
+
+export const ModalInformation = styled(Modal)`
+    
 `
