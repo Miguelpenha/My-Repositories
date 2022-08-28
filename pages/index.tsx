@@ -57,6 +57,7 @@ export default function Home() {
                             const verificationFindDescription = (
                                 repository.description && repository.description.toUpperCase().includes(find.toUpperCase())
                             )
+                            
                             let verificationFindLanguage = (
                                 repository.language && repository.language.toUpperCase().includes(find.toUpperCase())
                             )
