@@ -26,24 +26,7 @@ export default createGlobalStyle`
 
     body {
         padding-bottom: 15%;
-        background: linear-gradient(-45deg, ${props => props.theme.primary}, ${props => props.theme.backgroundColor});
-        background-size: 400% 400%;
-        background-position: 0% 50%;
         color: ${props => props.theme.color};
-        animation: gradient 8s linear infinite;
-    }
-
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-
-        50% {
-            background-position: 100% 50%;
-        }
-
-        100% {
-            background-position: 0% 50%;
-        }
+        background-color: ${props => props.theme.backgroundColor};
     }
 `
