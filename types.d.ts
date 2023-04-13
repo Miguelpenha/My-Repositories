@@ -7,7 +7,7 @@ export interface Itheme {
     backgroundColor: string
 }
 
-interface Irepository {
+interface IRepository {
     name: string
     language: string
     homepage: string

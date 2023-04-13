@@ -118,13 +118,13 @@ export const Main = styled.main`
     flex-direction: column;
 `
 
-interface IRepositories {
-    columns: number
-}
-
-export const Repositories = styled.section<IRepositories>`
+export const Repositories = styled.section`
     display: grid;
-    grid-template-columns: repeat(${props => props.columns}, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: 1000px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 `
 
 export const Footer = styled.footer`

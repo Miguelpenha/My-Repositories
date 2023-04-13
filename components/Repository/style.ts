@@ -19,14 +19,7 @@ export const Container = styled.a`
         transform: scale(1);
         box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
         
-        header {
-            border-left: 4px solid ${props => props.theme.color};
-
-            #icon-next {
-                right: 1.5%;
-                opacity: 1;
-            }
-
+        div {
             a {
                 top: 10%;
                 right: 2%;
@@ -35,21 +28,9 @@ export const Container = styled.a`
     }
 `
 
-export const Header = styled.header`
-    padding-left: 1%;
+export const Header = styled.div`
     transition-duration: 0.25s;
     transition-timing-function: linear;
-`
-
-export const IconNext = styled.svg`
-    top: 60%;
-    right: 5%;
-    opacity: 0;
-    width: 2.8vw;
-    position: absolute;
-    transition-duration: 0.25s;
-    transition-timing-function: linear;
-    fill: ${props => props.theme.color};
 `
 
 export const ContainerOpenHomePage = styled.a`
@@ -59,7 +40,7 @@ export const ContainerOpenHomePage = styled.a`
    width: 8.5%;
    position: absolute;
    border-radius: 25%;
-   transition-duration: 0.1s;
+   transition-duration: 0.2s;
    transition-timing-function: linear;
 
    :hover {
@@ -71,7 +52,6 @@ export const ContainerOpenHomePage = styled.a`
 `
 
 export const IconOpenHomePage = styled.svg`
-    width: 100%;
     fill: ${props => props.theme.color};
 `
 
@@ -86,13 +66,6 @@ export const Description = styled.span`
     margin-left: 1%;
     font-size: 1.2rem;
     align-items: center;
-`
-
-export const DescriptionIconAlert = styled.svg`
-    width: 1.4vw;
-    margin-right: 0.8%;
-    margin-left: -0.5%;
-    fill: ${props => props.theme.primary};
 `
 
 export const Languages = styled.div`
