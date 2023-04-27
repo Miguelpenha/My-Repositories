@@ -2,10 +2,9 @@ import { useState } from 'react'
 import api from '../api'
 import { IRepository } from '../types'
 import Head from 'next/head'
-import { Main, Repositories, Footer } from '../styles/pages'
-import Loading from '../components/Loading'
-import Repository from '../components/Repository'
 import Header from '../components/Header'
+import { Main } from '../styles/pages'
+import Repositories from '../components/Repositories'
 
 export default function Home() {
     const [find, setFind] = useState('')
@@ -16,30 +15,12 @@ export default function Home() {
             <Head>
                 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
                 <title>Meus repositórios</title>
+                <meta name="description" content="Meus repositórios"/>
             </Head>
             <Header find={find} setFind={setFind}/>
             <Main>
-                {repositories ? (
-                    <Repositories>
-                        {repositories.map((repository, index) => {
-                            const verificationFindDescription = (
-                                repository.description && repository.description.toUpperCase().includes(find.toUpperCase())
-                            )
-                            
-                            let verificationFindLanguage = (
-                                repository.language && repository.language.toUpperCase().includes(find.toUpperCase())
-                            )
-
-                            if (repository.name.toUpperCase().includes(find.toUpperCase()) || verificationFindDescription || verificationFindLanguage) {
-                                return <Repository key={index} repository={repository}/>
-                            }
-                        })}
-                    </Repositories>
-                ) : <Loading/>}
+                <Repositories find={find} repositories={repositories}/>
             </Main>
-            <Footer>
-                
-            </Footer>
         </>
     )
 }
