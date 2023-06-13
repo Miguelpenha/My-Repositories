@@ -1,7 +1,8 @@
 import { IRepository } from '../../types'
 import { FC } from 'react'
 import api from '../../api'
-import { Container, Header, ContainerOpenHomePage, IconOpenHomePage, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage } from './style'
+import useThumbnail from './useThumbnail'
+import { Container, Header, ContainerOpenHomePage, IconOpenHomePage, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage, Thumbnail } from './style'
 
 interface Iprops {
     repository: IRepository
@@ -9,7 +10,8 @@ interface Iprops {
 
 const Repository: FC<Iprops> = ({ repository }) => {
     const { data: languages } = api.get<object>(repository.languages_url)
-    const homePage = repository.homepage && repository.homepage.includes('https://') ? repository.homepage : `https://${repository.homepage}`
+    const homePage = repository.homepage ? repository.homepage.includes('https://') ? repository.homepage : `https://${repository.homepage}` : undefined
+    const thumbnail = useThumbnail(homePage)
     
     return (
         <Container href={repository.html_url} target="_blank" title={repository.name} onClick={event => {
@@ -35,6 +37,7 @@ const Repository: FC<Iprops> = ({ repository }) => {
                         </ContainerLanguage>
                     )) : <LoadingLanguage size={20} borderSize={3}/>}
                 </Languages>
+                {thumbnail && <Thumbnail src={thumbnail} width={1200} height={630}/>}
             </Header>
         </Container>
     )

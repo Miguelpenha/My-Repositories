@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 import Loading from '../Loading'
+import Image from 'next/image'
 
 export const Container = styled.a`
     width: 85%;
     padding: 3.5%;
     margin: 3.5% auto;
+    align-self: center;
+    height: min-content;
     border-radius: 20px;
     text-decoration: none;
     transform: scale(0.95);
@@ -72,6 +75,7 @@ export const Languages = styled.div`
     display: flex;
     margin-left: 1%;
     flex-wrap: wrap;
+    margin-bottom: 1em;
 `
 
 export const ContainerLanguage = styled.div`
@@ -99,4 +103,8 @@ export const LoadingLanguage = styled(Loading)`
     left: 0%;
     position: sticky;
     margin-top: 1.35%;
+`
+
+export const Thumbnail = styled(Image)`
+    border-radius: 15px;
 `
