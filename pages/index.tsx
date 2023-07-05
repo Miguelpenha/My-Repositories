@@ -13,9 +13,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
                 <title>Meus repositórios</title>
-                <meta name="description" content="Meus repositórios"/>
             </Head>
             <Header find={find} setFind={setFind}/>
             <Main>
