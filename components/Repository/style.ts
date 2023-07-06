@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Loading from '../Loading'
 import Image from 'next/image'
+import MarkdownRaw from 'react-markdown'
 
 export const Container = styled.a`
     width: 85%;
@@ -107,4 +108,36 @@ export const LoadingLanguage = styled(Loading)`
 
 export const Thumbnail = styled(Image)`
     border-radius: 15px;
+`
+
+export const Markdown = styled(MarkdownRaw)`
+    height: 20em;
+    padding: 1em;
+    overflow-y: auto;
+    border-radius: 15px;
+    white-space: pre-wrap;
+    background-color: ${props => props.theme.glassSecondary};
+
+    a {
+        color: ${props => props.theme.primary};
+    }
+
+    ul {
+        padding-left: 1em;
+    }
+
+    pre {
+        padding: 1em;
+        border-radius: 15px;
+        background-color: ${props => props.theme.glass};
+    }
+    
+    img {
+        width: 12em;
+        border-radius: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
 `

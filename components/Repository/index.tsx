@@ -2,7 +2,8 @@ import { IRepository } from '../../types'
 import { FC } from 'react'
 import api from '../../api'
 import useThumbnail from './useThumbnail'
-import { Container, Header, ContainerOpenHomePage, IconOpenHomePage, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage, Thumbnail } from './style'
+import useMarkdown from './useMarkdown'
+import { Container, Header, ContainerOpenHomePage, IconOpenHomePage, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage, Thumbnail, Markdown } from './style'
 
 interface Iprops {
     repository: IRepository
@@ -12,6 +13,7 @@ const Repository: FC<Iprops> = ({ repository }) => {
     const { data: languages } = api.get<object>(repository.languages_url)
     const homePage = repository.homepage ? repository.homepage.includes('https://') ? repository.homepage : `https://${repository.homepage}` : undefined
     const thumbnail = useThumbnail(homePage)
+    const markdown = useMarkdown(repository.name)
     
     return (
         <Container href={repository.html_url} target="_blank" title={repository.name} onClick={event => {
@@ -38,6 +40,9 @@ const Repository: FC<Iprops> = ({ repository }) => {
                     )) : <LoadingLanguage size={20} borderSize={3}/>}
                 </Languages>
                 {thumbnail && <Thumbnail src={thumbnail} width={1200} height={630}/>}
+                {!thumbnail && (
+                    <Markdown children={markdown() as string}/>
+                )}
             </Header>
         </Container>
     )
