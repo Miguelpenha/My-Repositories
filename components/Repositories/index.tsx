@@ -21,9 +21,11 @@ const Repositories: FC<IProps> = ({ repositories, find }) => {
                     let verificationFindLanguage = (
                         repository.language && repository.language.toUpperCase().includes(find.toUpperCase())
                     )
+
+                    const homePage = repository.homepage ? repository.homepage.includes('https://') ? repository.homepage : `https://${repository.homepage}` : undefined
     
                     if (repository.name.toUpperCase().includes(find.toUpperCase()) || verificationFindDescription || verificationFindLanguage) {
-                        return <Repository key={index} repository={repository}/>
+                        return <Repository homePage={homePage} key={index} repository={repository}/>
                     }
                 })}
             </Container>

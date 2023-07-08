@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from 'react'
+import getMarkdown from './getMarkdown'
 
-function useMarkdown(repositoryName: string) {
+function useMarkdown(thumbnail: string | undefined, repositoryName: string) {
     const [markdown, setMarkdown] = useState<string>()
 
-    function getMarkdown() {
-        axios.get(`https://raw.githubusercontent.com/${process.env.NEXT_PUBLIC_NAME_USER}/${repositoryName}/main/README.md`)
-        .then(({ data }) =>  setMarkdown(data))
+    useEffect(() => {
+        if (!thumbnail) {
+            getMarkdown(repositoryName)
+            .then(markdown => setMarkdown(markdown))
+        }
+    }, [thumbnail])
 
-        return markdown
-    }
-
-    return getMarkdown
+    return markdown
 }
 
 export default useMarkdown
