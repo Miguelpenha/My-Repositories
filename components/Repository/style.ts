@@ -3,60 +3,27 @@ import Loading from '../Loading'
 import Image from 'next/image'
 import MarkdownRaw from 'react-markdown'
 
-export const Container = styled.a`
+export const Container = styled.div`
     width: 85%;
-    padding: 3.5%;
-    margin: 3.5% auto;
+    margin: auto;
+    padding: 1.5em;
     align-self: center;
     height: min-content;
     border-radius: 20px;
     text-decoration: none;
-    transform: scale(0.95);
-    transition-duration: 0.15s;
     backdrop-filter: blur(100px);
-    transition-timing-function: linear;
     color: ${props => props.theme.color};
     box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
     background-color: ${props => props.theme.glass};
 
-    :hover {
-        transform: scale(1);
-        box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
-        
-        div {
-            a {
-                top: 10%;
-                right: 2%;
-            }
-        }
+    @media screen and (max-width: 450px) {
+        width: 85vw;
     }
 `
 
 export const Header = styled.div`
     transition-duration: 0.25s;
     transition-timing-function: linear;
-`
-
-export const ContainerOpenHomePage = styled.a`
-   top: 15%;
-   right: 4%;
-   padding: 2%;
-   width: 8.5%;
-   position: absolute;
-   border-radius: 25%;
-   transition-duration: 0.2s;
-   transition-timing-function: linear;
-
-   :hover {
-        border-radius: 50%;
-        backdrop-filter: blur(100px);
-        box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
-        background-color: ${props => props.theme.glass};
-   }
-`
-
-export const IconOpenHomePage = styled.svg`
-    fill: ${props => props.theme.color};
 `
 
 export const Title = styled.h2`
@@ -73,10 +40,17 @@ export const Description = styled.span`
 `
 
 export const Languages = styled.div`
+    gap: 1em;
+    width: 100%;
     display: flex;
-    margin-left: 1%;
-    flex-wrap: wrap;
+    overflow: auto;
+    padding: 0.5em;
     margin-bottom: 1em;
+    scroll-snap-type: x mandatory;
+
+    ::-webkit-scrollbar {
+        height: 2px;
+    }
 `
 
 export const ContainerLanguage = styled.div`
@@ -84,11 +58,12 @@ export const ContainerLanguage = styled.div`
     margin-right: 4%;
     margin-top: 1.5%;
     align-items: center;
+    scroll-snap-align: center;
 `
 
 export const LanguageDetail = styled.div`
-    width: 0.8vw;
-    height: 0.8vw;
+    width: 1.1em;
+    height: 0.8em;
     margin-right: 6%;
     min-width: 0.8vw;
     border-radius: 50%;
@@ -102,8 +77,9 @@ export const Language = styled.div`
 
 export const LoadingLanguage = styled(Loading)`
     left: 0%;
+    transform: none;
     position: sticky;
-    margin-top: 1.35%;
+    margin-top: 1em;
 `
 
 export const Thumbnail = styled(Image)`
@@ -116,7 +92,12 @@ export const Markdown = styled(MarkdownRaw)`
     overflow-y: auto;
     border-radius: 15px;
     white-space: pre-wrap;
+    word-wrap: break-word;
     background-color: ${props => props.theme.glassSecondary};
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
 
     a {
         color: ${props => props.theme.primary};
@@ -139,5 +120,9 @@ export const Markdown = styled(MarkdownRaw)`
 
     h2 {
         font-size: 20px;
+    }
+
+    code {
+        white-space: pre-wrap
     }
 `

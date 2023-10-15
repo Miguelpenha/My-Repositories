@@ -8,10 +8,10 @@ interface IContainer {
 export const Container = styled.span<IContainer>`
     top: 50%;
     left: 50%;
-    transform: 50% 50%;
     border-radius: 50%;
     position: absolute;
     display: inline-block;
+    transform: translate(-50%, -50%);
     width: ${props => props.size || 100}px;
     height: ${props => props.size || 100}px;
     
