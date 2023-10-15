@@ -1,4 +1,4 @@
-export interface Itheme {
+export interface ITheme {
     color: string
     glass: string
     primary: string

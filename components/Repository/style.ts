@@ -11,9 +11,8 @@ export const Container = styled.div`
     height: min-content;
     border-radius: 20px;
     text-decoration: none;
-    backdrop-filter: blur(100px);
     color: ${props => props.theme.color};
-    box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     background-color: ${props => props.theme.glass};
 
     @media screen and (max-width: 450px) {
