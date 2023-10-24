@@ -1,22 +1,14 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import cheerio from 'cheerio'
 
 function useThumbnail(url?: string) {
     const [thumbnail, setThumbnail] = useState<string>()
 
     useEffect(() => {
         if (url) {
-            axios.get(url).then(({ data }) => {
-                const html = cheerio.load(data)
-                const urlImage = html('meta[property="og:image"]').attr('content')
-        
-                if (urlImage) {
-                    if (urlImage.includes('https://')) {
-                        setThumbnail(urlImage)
-                    } else {
-                        setThumbnail(`${url}/${urlImage}`)
-                    }
+            axios.get(`${url}/img/thumbnail.png`).then(({ data }) => {
+                if (data) {
+                    setThumbnail(`${url}/img/thumbnail.png`)
                 }
             })
         }
