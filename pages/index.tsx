@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import api from '../api'
+import api from '../services/apiGithub'
 import { IRepository } from '../types'
 import Head from 'next/head'
 import Header from '../components/Header'

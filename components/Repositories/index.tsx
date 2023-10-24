@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { Container } from './style'
 import Repository from '../Repository'
 import Loading from '../Loading'
+import api from '../../services/api'
 
 interface IProps {
     find: string
@@ -10,7 +11,9 @@ interface IProps {
 }
 
 const Repositories: FC<IProps> = ({ repositories, find }) => {
-    if (repositories) {
+    const { data: thumbnails } = api.get<{ url: string, name: string }[]>('/thumbnails')
+
+    if (repositories && thumbnails) {
         return (
             <Container>
                 {repositories.map((repository, index) => {
@@ -25,7 +28,9 @@ const Repositories: FC<IProps> = ({ repositories, find }) => {
                     const homePage = repository.homepage ? repository.homepage.includes('https://') ? repository.homepage : `https://${repository.homepage}` : undefined
     
                     if (repository.name.toUpperCase().includes(find.toUpperCase()) || verificationFindDescription || verificationFindLanguage) {
-                        return <Repository homePage={homePage} key={index} repository={repository}/>
+                        const thumbnail = thumbnails.find(thumbnail => thumbnail.name === repository.name)
+
+                        return <Repository thumbnail={thumbnail ? thumbnail.url : thumbnail} homePage={homePage} key={index} repository={repository}/>
                     }
                 })}
             </Container>

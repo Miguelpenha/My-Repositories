@@ -1,18 +1,17 @@
 import { IRepository } from '../../types'
 import { FC } from 'react'
-import api from '../../api'
+import api from '../../services/apiGithub'
 import { Container, Header, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage, Options, Option, IconOption, Thumbnail, Markdown } from './style'
-import useThumbnail from './useThumbnaill'
 import useMarkdown from './useMarkdown'
 
 interface Iprops {
     repository: IRepository
     homePage: string | undefined
+    thumbnail: string | undefined
 }
 
-const Repository: FC<Iprops> = ({ repository, homePage }) => {
+const Repository: FC<Iprops> = ({ repository, thumbnail, homePage }) => {
     const { data: languages } = api.get<object>(repository.languages_url)
-    const thumbnail = useThumbnail(homePage)
     const markdown = useMarkdown(thumbnail, repository.name)
     
     return (
