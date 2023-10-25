@@ -34,7 +34,7 @@ export const InputFind = styled.input`
     width: 14em;
     border: none;
     font-size: 1.4em;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 0.7em 0.8em;
     transition-duration: 0.2s;
     backdrop-filter: blur(10px);
@@ -45,7 +45,7 @@ export const InputFind = styled.input`
 
     :focus {
         outline: none;
-        border-radius: 30px;
+        border-radius: 20px;
     }
 
     ::placeholder {
