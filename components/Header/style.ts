@@ -10,7 +10,7 @@ export const Container = styled.header`
     padding: 1.5em 2em;
     border-radius: 20px;
     transform: translate(-50%);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     box-shadow: 0 5px 15px rgb(0 0 0 / 30%);
     background-color: ${props => props.theme.glassSecondary};
 
@@ -37,7 +37,7 @@ export const InputFind = styled.input`
     border-radius: 30px;
     padding: 0.7em 0.8em;
     transition-duration: 0.2s;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
     transition-timing-function: linear;
     color: ${props => props.theme.color};
     box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
