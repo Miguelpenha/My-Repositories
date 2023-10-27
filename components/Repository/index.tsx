@@ -1,7 +1,7 @@
 import { IRepository } from '../../types'
 import { FC } from 'react'
 import api from '../../services/apiGithub'
-import { Container, Header, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage, Options, Option, IconOption, Thumbnail, Markdown } from './style'
+import { Container, Header, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage, Options, Option, IconOption, ContainerThumbnail, Thumbnail, Markdown } from './style'
 import useMarkdown from './useMarkdown'
 
 interface Iprops {
@@ -43,7 +43,11 @@ const Repository: FC<Iprops> = ({ repository, thumbnail, homePage }) => {
                         </Option>
                     )}
                 </Options>
-                {thumbnail && <Thumbnail src={thumbnail} width={1200} height={630}/>}
+                {thumbnail && (
+                    <ContainerThumbnail>
+                        <Thumbnail src={thumbnail} width={1200} height={630}/>
+                    </ContainerThumbnail>
+                )}
                 {!thumbnail && markdown && (
                     <Markdown children={markdown}/>
                 )}

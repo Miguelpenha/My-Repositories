@@ -109,6 +109,12 @@ export const IconOption = styled.svg`
     fill: ${props => props.theme.primary};
 `
 
+export const ContainerThumbnail = styled.div`
+    height: 20em;
+    display: flex;
+    align-items: center;
+`
+
 export const Thumbnail = styled(Image)`
     border-radius: 15px;
 `
