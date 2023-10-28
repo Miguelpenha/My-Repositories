@@ -95,11 +95,13 @@ export const Option = styled.a`
     display: flex;
     padding: 0.5em;
     border-radius: 25%;
+    transform: scale(0.95);
     transition-duration: 0.2s;
     transition-timing-function: linear;
     
     :hover {
         border-radius: 50%;
+        transform: scale(1.1);
         background-color: ${props => props.theme.glass};
     }
 `
