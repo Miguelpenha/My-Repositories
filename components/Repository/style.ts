@@ -151,6 +151,12 @@ export const Markdown = styled(MarkdownRaw)`
         border-radius: 15px;
         background-color: ${props => props.theme.glass};
     }
+
+    code {
+        padding: 0.3em;
+        border-radius: 8px;
+        background-color: ${props => props.theme.glass};
+    }
     
     img {
         width: 12em;
