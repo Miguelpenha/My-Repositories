@@ -154,6 +154,7 @@ export const Markdown = styled(MarkdownRaw)`
 
     code {
         padding: 0.3em;
+        line-height: 2em;
         border-radius: 8px;
         background-color: ${props => props.theme.glass};
     }
@@ -170,4 +171,32 @@ export const Markdown = styled(MarkdownRaw)`
     code {
         white-space: pre-wrap
     }
+`
+
+export const ContainerCopyMarkdown = styled.div`
+    position: relative;
+`
+
+export const ButtonCopyMarkdown = styled.button`
+    top: 0.5em;
+    right: 0.5em;
+    border: none;
+    opacity: 0.5;
+    display: flex;
+    padding: 0.5em;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 25%;
+    transition-duration: 0.2s;
+    background-color: transparent;
+    transition-timing-function: linear;
+
+    :hover {
+        background-color: ${props => props.theme.backgroundColor};
+    }
+`
+
+export const IconCopyMarkdown = styled.svg`
+    width: 1.8em;
+    fill: ${props => props.theme.primary};
 `
