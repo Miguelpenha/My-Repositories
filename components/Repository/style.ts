@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import Loading from '../Loading'
 import Image from 'next/image'
-import MarkdownRaw from 'react-markdown'
 
 export const Container = styled.div`
     width: 85%;
@@ -123,80 +122,4 @@ export const ContainerThumbnail = styled.div`
 
 export const Thumbnail = styled(Image)`
     border-radius: 15px;
-`
-
-export const Markdown = styled(MarkdownRaw)`
-    height: 20em;
-    padding: 1em;
-    overflow-y: auto;
-    border-radius: 15px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    background-color: ${props => props.theme.glassSecondary};
-
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    a {
-        color: ${props => props.theme.primary};
-    }
-
-    ul {
-        padding-left: 1em;
-    }
-
-    pre {
-        padding: 1em;
-        border-radius: 15px;
-        background-color: ${props => props.theme.glass};
-    }
-
-    code {
-        padding: 0.3em;
-        line-height: 2em;
-        border-radius: 8px;
-        background-color: ${props => props.theme.glass};
-    }
-    
-    img {
-        width: 12em;
-        border-radius: 15px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    code {
-        white-space: pre-wrap
-    }
-`
-
-export const ContainerCopyMarkdown = styled.div`
-    position: relative;
-`
-
-export const ButtonCopyMarkdown = styled.button`
-    top: 0.5em;
-    right: 0.5em;
-    border: none;
-    opacity: 0.5;
-    display: flex;
-    padding: 0.5em;
-    cursor: pointer;
-    position: absolute;
-    border-radius: 25%;
-    transition-duration: 0.2s;
-    background-color: transparent;
-    transition-timing-function: linear;
-
-    :hover {
-        background-color: ${props => props.theme.backgroundColor};
-    }
-`
-
-export const IconCopyMarkdown = styled.svg`
-    width: 1.8em;
-    fill: ${props => props.theme.primary};
 `
