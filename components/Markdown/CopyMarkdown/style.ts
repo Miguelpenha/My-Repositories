@@ -32,4 +32,11 @@ export const Pre = styled.pre`
     padding: 1em;
     border-radius: 15px;
     background-color: ${props => props.theme.glass};
+
+    code {
+        padding: 0;
+        line-height: 1em;
+        border-radius: 0;
+        background-color: transparent;
+    }
 `

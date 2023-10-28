@@ -26,6 +26,7 @@ export const Container = styled(MarkdownRaw)`
         padding: 0.3em;
         line-height: 2em;
         border-radius: 8px;
+        white-space: pre-wrap;
         background-color: ${props => props.theme.glass};
     }
     
@@ -35,10 +36,10 @@ export const Container = styled(MarkdownRaw)`
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 1.2em;
     }
 
-    code {
-        white-space: pre-wrap
+    h3 {
+        font-size: 1em;
     }
 `
