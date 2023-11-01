@@ -113,6 +113,7 @@ export const IconOption = styled.svg`
 export const ContainerThumbnail = styled.div`
     height: 20em;
     display: flex;
+    overflow: hidden;
     align-items: center;
 
     @media screen and (max-width: 1000px) {
