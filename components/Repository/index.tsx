@@ -27,7 +27,7 @@ const Repository: FC<Iprops> = ({ repository, thumbnail, homePage }) => {
                             <LanguageDetail/>
                             <Language>{language}</Language>
                         </ContainerLanguage>
-                    )) : <LoadingLanguage size={20} borderSize={3}/>}
+                    )) : <LoadingLanguage size={14} borderSize={3}/>}
                 </Languages>
                 <Options>
                     <Option href={repository.html_url} target="_blank" title={repository.name}>

@@ -6,8 +6,8 @@ export const Container = styled.div`
     width: 85%;
     margin: auto;
     padding: 1em;
+    height: 100%;
     align-self: center;
-    height: min-content;
     border-radius: 20px;
     text-decoration: none;
     color: ${props => props.theme.color};
