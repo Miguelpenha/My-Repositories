@@ -3,6 +3,7 @@ import { FC } from 'react'
 import api from '../../services/apiGithub'
 import useMarkdown from './useMarkdown'
 import { Container, Header, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage, Options, Option, IconOption, ContainerThumbnail, Thumbnail } from './style'
+import blurData from '../../utils/blurData'
 import Markdown from '../Markdown'
 
 interface Iprops {
@@ -45,7 +46,7 @@ const Repository: FC<Iprops> = ({ repository, thumbnail, homePage }) => {
                 </Options>
                 {thumbnail && (
                     <ContainerThumbnail>
-                        <Thumbnail src={thumbnail} width={1200} height={630}/>
+                        <Thumbnail placeholder="blur" blurDataURL={blurData} src={thumbnail} width={1200} height={630}/>
                     </ContainerThumbnail>
                 )}
                 {!thumbnail && markdown && (
