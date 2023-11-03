@@ -12,7 +12,7 @@ const CopyMarkdown: FC<IProps> = ({ node, ...rest }) => {
     
     return (
         <Container>
-            <Button onClick={handleClick}>
+            <Button title="Copiar" onClick={handleClick}>
                 {!copied ? (
                     <Icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0z" fill="none"/>
