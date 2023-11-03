@@ -114,6 +114,7 @@ export const ContainerThumbnail = styled.div`
     height: 20em;
     display: flex;
     overflow: hidden;
+    border-radius: 15px;
     align-items: center;
 
     @media screen and (max-width: 1000px) {
