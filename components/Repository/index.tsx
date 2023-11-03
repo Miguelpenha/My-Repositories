@@ -46,7 +46,7 @@ const Repository: FC<Iprops> = ({ repository, thumbnail, homePage }) => {
                 </Options>
                 {thumbnail && (
                     <ContainerThumbnail>
-                        <Thumbnail placeholder="blur" blurDataURL={blurData} src={thumbnail} width={1200} height={630}/>
+                        <Thumbnail alt={repository.description} placeholder="blur" blurDataURL={blurData} src={thumbnail} width={1200} height={630}/>
                     </ContainerThumbnail>
                 )}
                 {!thumbnail && markdown && (
