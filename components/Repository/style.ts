@@ -19,11 +19,6 @@ export const Container = styled.div`
     }
 `
 
-export const Header = styled.div`
-    transition-duration: 0.25s;
-    transition-timing-function: linear;
-`
-
 export const Title = styled.h2`
     margin-left: 1%;
     margin-bottom: 1%;
