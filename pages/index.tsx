@@ -8,7 +8,7 @@ import Repositories from '../components/Repositories'
 
 export default function Home() {
     const [find, setFind] = useState('')
-    const { data: repositories } = api.get<IRepository[]>(`/users/${process.env.NEXT_PUBLIC_NAME_USER}/repos`)
+    const { data: repositories } = api.get<IRepository[]>(`/users/${process.env.NEXT_PUBLIC_NAME_USER}/repos?per_page=100`)
     
     return (
         <>

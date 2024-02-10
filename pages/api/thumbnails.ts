@@ -6,7 +6,7 @@ import cheerio from 'cheerio'
 
 async function thumbnails(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'GET') {
-        const { data: repositories } = await apiBase.get<IRepository[]>(`/users/${process.env.NEXT_PUBLIC_NAME_USER}/repos`)
+        const { data: repositories } = await apiBase.get<IRepository[]>(`/users/${process.env.NEXT_PUBLIC_NAME_USER}/repos?per_page=100`)
 
         const urlsRaw = await Promise.all(
             repositories.map(repository => {
