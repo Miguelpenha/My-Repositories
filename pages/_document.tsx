@@ -43,8 +43,9 @@ export default class MyDocument extends Document {
                     <meta name="description" content="Meus repositórios"/>
                     <meta name="twitter:card" content="summary_large_image"/>
                     <meta property="og:description" content="Meus repositórios"/>
-                    <meta property="og:url" content="https://meus-repositorios.vercel.app"/>
-                    <meta property="og:image" content="https://meus-repositorios.vercel.app/img/thumbnail.png"/>
+                    <link rel="canonical" href="https://repositories.miguelpenha.vercel.app/"/>
+                    <meta property="og:url" content="https://repositories.miguelpenha.vercel.app/"/>
+                    <meta property="og:image" content="https://repositories.miguelpenha.vercel.app//img/thumbnail.png"/>
                 </Head>
                 <body>
                     <Main/>
