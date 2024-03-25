@@ -1,7 +1,7 @@
 import { IRepository } from '../../types'
 import { FC } from 'react'
 import { Container } from './style'
-import Repository from '../Repository'
+import Repository from './Repository'
 import Loading from '../Loading'
 import api from '../../services/api'
 
@@ -15,7 +15,7 @@ const Repositories: FC<IProps> = ({ repositories, find }) => {
 
     if (repositories && thumbnails) {
         return (
-            <Container>
+            <Container id="repositories">
                 {repositories.map((repository, index) => {
                     const verificationFindDescription = (
                         repository.description && repository.description.toUpperCase().includes(find.toUpperCase())

@@ -1,28 +1,48 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.header`
-    top: -15%;
+export const Container = styled.div`
+    top: 3%;
     left: 50%;
     width: 90%;
     z-index: 1;
-    opacity: 0;
     display: flex;
+    height: 3.5em;
     position: fixed;
-    padding: 1.5em 2em;
+    flex-direction: row;
     border-radius: 20px;
-    transform: translate(-50%);
-    box-shadow: 0 5px 15px rgb(0 0 0 / 30%);
+    transform: translateX(-50%);
     backdrop-filter: saturate(130%) blur(30px);
+`
 
-    @media screen and (max-width: 750px) {
-        flex-direction: column;
-    }
+export const Balls = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+interface IBall {
+    second?: boolean
+}
+
+export const Ball = styled.div<IBall>`
+    width: 3.5em;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+
+    ${props => props.second && css`
+        margin-left: auto;
+    `}
 `
 
 export const Title = styled.h1`
+    opacity: 0;
     font-size: 2.2rem;
     margin-right: auto;
     align-self: center;
+    transform: translateY(-70%);
     color: ${props => props.theme.primary};
 
     @media screen and (max-width: 750px) {

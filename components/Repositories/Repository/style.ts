@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Loading from '../Loading'
+import Loading from '../../Loading'
 import Image from 'next/image'
 
 export const Container = styled.div`

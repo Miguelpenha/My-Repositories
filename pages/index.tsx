@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import { Main } from '../styles/pages'
 import Repositories from '../components/Repositories'
+import HeaderTest from '../components/HeaderTest'
 
 export default function Home() {
     const [find, setFind] = useState('')
@@ -15,7 +16,8 @@ export default function Home() {
             <Head>
                 <title>Meus repositórios</title>
             </Head>
-            <Header find={find} setFind={setFind}/>
+            {/* <Header find={find} setFind={setFind}/> */}
+            <HeaderTest find={find} setFind={setFind}/>
             <Main>
                 <Repositories find={find} repositories={repositories}/>
             </Main>
