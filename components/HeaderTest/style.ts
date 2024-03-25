@@ -52,6 +52,7 @@ export const Title = styled.h1`
 
 export const InputFind = styled.input`
     opacity: 0;
+    z-index: 1;
     width: 14em;
     border: none;
     font-size: 1.4em;

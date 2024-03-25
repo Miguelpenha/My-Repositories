@@ -1,9 +1,9 @@
 import { IRepository } from '../../types'
 import { FC } from 'react'
+import api from '../../services/api'
 import { Container } from './style'
 import Repository from './Repository'
 import Loading from '../Loading'
-import api from '../../services/api'
 
 interface IProps {
     find: string
@@ -12,7 +12,7 @@ interface IProps {
 
 const Repositories: FC<IProps> = ({ repositories, find }) => {
     const { data: thumbnails } = api.get<{ url: string, name: string }[]>('/thumbnails')
-
+    
     if (repositories && thumbnails) {
         return (
             <Container id="repositories">
