@@ -4,7 +4,7 @@ import api from '../../services/apiGithub'
 import useMarkdown from './useMarkdown'
 import { Container, Title, Description, Languages, ContainerLanguage, Language, LanguageDetail, LoadingLanguage, Options, Option, IconOption, ContainerThumbnail, Thumbnail } from './style'
 import blurData from '../../utils/blurData'
-import Markdown from '../Markdown'
+import Markdown from './Markdown'
 
 interface Iprops {
     repository: IRepository
