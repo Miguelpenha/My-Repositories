@@ -6,7 +6,7 @@ export const Container = styled.div`
     width: 90%;
     z-index: 1;
     display: flex;
-    height: 3.5em;
+    height: 6.7em;
     position: fixed;
     flex-direction: row;
     border-radius: 20px;
@@ -28,7 +28,8 @@ interface IBall {
 }
 
 export const Ball = styled.div<IBall>`
-    width: 3.5em;
+    width: 7em;
+    height: 6.7em;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.2);
 
@@ -42,7 +43,7 @@ export const Title = styled.h1`
     font-size: 2.2rem;
     margin-right: auto;
     align-self: center;
-    transform: translateY(-70%);
+    transform: translateX(-10%);
     color: ${props => props.theme.primary};
 
     @media screen and (max-width: 750px) {
