@@ -27,37 +27,35 @@ function useAnimation() {
                     borderRadius: '0 20px 20px 0'
                 })
 
-                gsap.delayedCall(1, () => {
-                    gsap.to('#header', {
-                        backgroundColor: theme.glass
-                    })
-    
-                    gsap.to('#header>.balls>.first, #header>.balls>.second', {
-                        opacity: 0,
-                        onComplete() {
-                            gsap.to('#header>.balls>.first, #header>.balls>.second', {
-                                display: 'none',
-                                visibility: 'hidden',
-                            })
+                gsap.to('#header', {
+                    backgroundColor: theme.glass
+                })
 
-                            gsap.to('#header', {
-                                padding: '1.5em 2em',
-                                boxShadow: '0 5px 15px rgb(0 0 0 / 30%)',
-                                onComplete() {
-                                    gsap.to('#header>.title', {
-                                        x: 0,
-                                        opacity: 1,
-                                        duration: 0.5
-                                    })
-            
-                                    gsap.to('#header>.find', {
-                                        opacity: 1,
-                                        duration: 0.5
-                                    })
-                                }
-                            })
-                        }
-                    })
+                gsap.to('#header>.balls>.first, #header>.balls>.second', {
+                    opacity: 0,
+                    onComplete() {
+                        gsap.to('#header>.balls>.first, #header>.balls>.second', {
+                            display: 'none',
+                            visibility: 'hidden',
+                        })
+
+                        gsap.to('#header', {
+                            padding: '1.5em 2em',
+                            boxShadow: '0 5px 15px rgb(0 0 0 / 30%)',
+                            onComplete() {
+                                gsap.to('#header>.title', {
+                                    x: 0,
+                                    opacity: 1,
+                                    duration: 0.5
+                                })
+        
+                                gsap.to('#header>.find', {
+                                    opacity: 1,
+                                    duration: 0.5
+                                })
+                            }
+                        })
+                    }
                 })
             }
         })
