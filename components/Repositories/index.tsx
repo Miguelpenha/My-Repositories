@@ -13,7 +13,7 @@ interface IProps {
 const Repositories: FC<IProps> = ({ repositories, find }) => {
     const { data: thumbnails } = api.get<{ url: string, name: string }[]>('/thumbnails')
     
-    if (repositories && thumbnails) {
+    if (repositories) {
         return (
             <Container id="repositories">
                 {repositories.map((repository, index) => {
@@ -28,7 +28,7 @@ const Repositories: FC<IProps> = ({ repositories, find }) => {
                     const homePage = repository.homepage ? repository.homepage.includes('https://') ? repository.homepage : `https://${repository.homepage}` : undefined
     
                     if (repository.name.toUpperCase().includes(find.toUpperCase()) || verificationFindDescription || verificationFindLanguage) {
-                        const thumbnail = thumbnails.find(thumbnail => thumbnail.name === repository.name)
+                        const thumbnail = (thumbnails || []).find(thumbnail => thumbnail.name === repository.name)
 
                         return <Repository thumbnail={thumbnail ? thumbnail.url : thumbnail} homePage={homePage} key={index} repository={repository}/>
                     }
